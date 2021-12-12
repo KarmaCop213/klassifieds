@@ -1,7 +1,7 @@
 {
   "singleQuote": true,
-  "importOrderParserPlugins" : ["classProperties", "typescript","[\"decorators\", { \"decoratorsBeforeExport\": true }]"],
-  "importOrder": ["^@angular/(.*)$", "^[./]"],
+  "importOrder": ["^@angular/(.*)$", "^@klassifieds/(.*)$", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": true,
+  "semi": false
 }

@@ -10,12 +10,21 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2017", "dom", "esnext.asynciterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@klassifieds/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@app/*": ["./apps/klassifieds/src/app/*"],
+      "@klassifieds/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@klassifieds/api/auth/data-access": [
+        "libs/api/auth/data-access/src/index.ts"
+      ],
+      "@klassifieds/api/auth/feature": ["libs/api/auth/feature/src/index.ts"],
+      "@klassifieds/api/core/feature": ["libs/api/core/feature/src/index.ts"],
+      "@klassifieds/shared/validators": ["libs/shared/validators/src/index.ts"],
+      "@klassifieds/user/domain": ["libs/user/domain/src/index.ts"],
+      "@klassifieds/user/feature": ["libs/user/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
