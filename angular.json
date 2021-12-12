@@ -53,6 +53,75 @@
       },
       "tags": []
     },
+    "api-auth-data-access": {
+      "root": "libs/api/auth/data-access",
+      "sourceRoot": "libs/api/auth/data-access/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/api/auth/data-access/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/auth/data-access"],
+          "options": {
+            "jestConfig": "libs/api/auth/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": ["domain:api-auth", "type:data-access"]
+    },
+    "api-auth-feature": {
+      "root": "libs/api/auth/feature",
+      "sourceRoot": "libs/api/auth/feature/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/api/auth/feature/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/auth/feature"],
+          "options": {
+            "jestConfig": "libs/api/auth/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": ["domain:api-auth", "type:feature"]
+    },
+    "api-core-feature": {
+      "root": "libs/api/core/feature",
+      "sourceRoot": "libs/api/core/feature/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/api/core/feature/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/core/feature"],
+          "options": {
+            "jestConfig": "libs/api/core/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": ["domain:api-core", "type:feature"]
+    },
     "api-interfaces": {
       "root": "libs/api-interfaces",
       "sourceRoot": "libs/api-interfaces/src",
@@ -195,6 +264,84 @@
       },
       "tags": [],
       "implicitDependencies": ["klassifieds"]
+    },
+    "shared-validators": {
+      "projectType": "library",
+      "root": "libs/shared/validators",
+      "sourceRoot": "libs/shared/validators/src",
+      "prefix": "klassifieds",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/validators"],
+          "options": {
+            "jestConfig": "libs/shared/validators/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/validators/src/**/*.ts",
+              "libs/shared/validators/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["domain:shared", "type:util"]
+    },
+    "user-domain": {
+      "projectType": "library",
+      "root": "libs/user/domain",
+      "sourceRoot": "libs/user/domain/src",
+      "prefix": "klassifieds",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/user/domain"],
+          "options": {
+            "jestConfig": "libs/user/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user/domain/src/**/*.ts",
+              "libs/user/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["domain:user", "type:domain"]
+    },
+    "user-feature": {
+      "projectType": "library",
+      "root": "libs/user/feature",
+      "sourceRoot": "libs/user/feature/src",
+      "prefix": "klassifieds",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/user/feature"],
+          "options": {
+            "jestConfig": "libs/user/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/user/feature/src/**/*.ts",
+              "libs/user/feature/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["domain:user", "type:feature"]
     }
   }
 }
