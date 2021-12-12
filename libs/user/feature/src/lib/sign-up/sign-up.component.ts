@@ -1,34 +1,33 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 
-import { confirmEmailValidator } from '@klassifieds/shared/validators'
+import { confirmPasswordValidator } from '@klassifieds/shared/validators'
 import { UserService } from '@klassifieds/user/domain'
 
 @Component({
   selector: 'klassifieds-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss'],
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
 })
-export class SignInComponent implements OnInit {
-  signInForm = new FormGroup(
+export class SignUpComponent implements OnInit {
+  signUpForm = new FormGroup(
     {
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl('', Validators.required),
     },
-    { validators: confirmEmailValidator }
+    [confirmPasswordValidator]
   )
 
   constructor(private readonly userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // placeholder
+  }
 
   createUser(signInForm: FormGroup) {
     this.userService
-      .createUser(
-        signInForm.get('email')?.value,
-        signInForm.get('password')?.value
-      )
+      .createUser(signInForm.get('email')?.value, signInForm.get('password')?.value)
       .subscribe((data) => console.log(JSON.stringify(data)))
   }
 }

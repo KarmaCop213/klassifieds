@@ -1,9 +1,17 @@
 {
   "helloWorld": "Hello world",
-  "signIn": {
+  "signUp": {
     "emailLabel": "Email",
     "passwordLabel": "Password",
     "confirmPasswordLabel": "Confirm password",
-    "signInButton": "Sign in"
+    "signUpButton": "Sign Up",
+    "validations": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password should have at least 8 characters",
+      "passwordConfirmationRequired": "Password confirmation is required",
+      "passwordConfirmationMatch": "Passwords don't match"
+    }
   }
 }

@@ -3,5 +3,6 @@
   "importOrder": ["^@angular/(.*)$", "^@klassifieds/(.*)$", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "semi": false
+  "semi": false,
+  "printWidth": 120
 }

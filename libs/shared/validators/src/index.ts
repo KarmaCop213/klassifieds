@@ -1,2 +1,2 @@
-export * from './lib/shared-validators.module';
-export { confirmEmailValidator } from './lib/confirm-email-validator';
+export * from './lib/shared-validators.module'
+export { confirmPasswordValidator } from './lib/confirm-password-validator'
